@@ -1,0 +1,45 @@
+#mean
+x<-c(20,22,33,44,21,10)
+result<-mean(x)
+print(result)
+#mean with na
+x<-c(20,22,33,44,21,10,NA)
+result<-mean(x)
+print(result)
+#mean with trim
+x<-c(20,22,33,44,21,10,NA)
+result<-mean(x,na.rm = TRUE,trim = 0.2)
+print(result)
+#median
+x<-c(20,22,33,44,21,10)
+result<-median(x)
+print(result)
+#mode
+getmode<-function(v){
+  uniq=unique(v)
+  uniq[which.max(tabulate(match(v,uniq)))]
+  }
+v<-c(2,1,2,3,4,5,2,3,2,2)
+result<-getmode(v)
+print(result)
+#covariance
+x<-c(5,7,3,6,8)
+y<-c(65,80,50,70,90)
+covariance<-cov(x,y)
+print(covariance)
+boxplot(x,y)
+#regression
+x<-c(50,75,30,60,85)
+y<-c(60,85,45,75,95)
+regression<-lm(x~y)
+print(regression)
+boxplot(x,y)
+#analysis
+input<-mtcars[c("am","mpg","hp")]
+print(head(input))
+result1<-aov(mpg~hp*am,data = input)
+print(summary(result1))
+result2<-aov(mpg~hp+am,data=input)
+print(summary(result2))
+print(anova(result1,result2))
+boxplot(anova(result1,result2))
