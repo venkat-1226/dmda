@@ -1,0 +1,19 @@
+@relation employee
+
+@attribute Gender {male,female}
+@attribute Age {young,middle,senior}
+@attribute experience {low,medium,high}
+@attribute salary {low,high}
+@attribute promotion {yes,no}
+
+@data
+male,young,low,low,no
+male,young,medium,low,no
+female,middle,medium,high,yes
+female,senior,high,high,yes
+male,senior,medium,high,yes
+female,young,low,low,no
+male,middle,high,high,yes
+female,middle,medium,low,yes
+male,young,high,high,yes
+female,senior,low,low,no
