@@ -1,0 +1,57 @@
+#dnorm
+x<-seq(20,80,by=1)
+y<-dnorm(x,mean = 50,sd=10)
+plot(x,y,type = "p",pch=19,col="blue",main = "dnorm",xlab = "marks",ylab = "density")
+model<-lm(y~x)
+abline(model,col="red",lwd=1)
+summary(model)
+#pnorm
+x<-seq(20,80,by=1)
+y<-pnorm(x,mean = 50,sd=10)
+plot(x,y,type = "p",pch=19,col="blue",main = "commulative probability(pnorm)",xlab = "marks",ylab = "probability")
+model<-lm(y~x)
+abline(model,col="red",lwd=2)
+summary(model)
+#qnorm
+p<-seq(0.01,0.99,0.05)
+x<-qnorm(p,mean = 50,sd=10)
+plot(p,x,pch=19,col="blue",main = "quantile probability(qnorm)",xlab = "probability",ylab = "marks")
+model<-lm(x~p)
+abline(model,col="red",lwd=2)
+summary(model)
+#rnorm
+set.seed(100)
+y<-rnorm(50,mean = 50,sd=10)
+x<-1:50
+plot(x,y,pch=19,col="blue",main = "random normal data(rnorm)",xlab = "observations",ylab = "marks")
+model<-lm(y~x)
+abline(model,col="red",lwd=2)
+summary(model)
+#dbinom
+x<-0:10
+y<-dbinom(x,size=10,prob=0.6)
+plot(x,y,pch=19,col="blue",main = "binomial probability(dbinom)",xlab = "success",ylab = "probability")
+model<-lm(y~x)
+abline(model,col="red",lwd=2)
+summary(model)
+#pbinom
+x<-0:10
+y<-pbinom(x,size=10,prob=0.6)
+plot(x,y,pch=19,col="blue",main = "commulative binomial(pbinom)",xlab = "success",ylab = "probability")
+model<-lm(y~x)
+abline(model,col="red",lwd=2)
+summary(model)
+#qbinom
+p<-seq(0.1,0.9,0.1)
+x<-qbinom(p,size=10,prob=0.6)
+plot(p,x,pch=19,col="blue",main = "quantile binomial(qbinom)",xlab = "probability",ylab = "success")
+model<-lm(x~p)
+abline(model,col="red",lwd=2)
+summary(model)
+#rbinom
+p<-seq(0.1,0.9,0.1)
+x<-rbinom(p,size=10,prob=0.6)
+plot(p,x,pch=19,col="blue",main = "random binomial(rbinom)",xlab = "probability",ylab = "success")
+model<-lm(x~p)
+abline(model,col="red",lwd=2)
+summary(model)
