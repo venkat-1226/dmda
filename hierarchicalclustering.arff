@@ -1,0 +1,16 @@
+@relation student
+
+@attribute age {<30,30-40,>40}
+@attribute income {low,medium,high}
+@attribute student {yes,no}
+@attribute marks numeric
+@attribute credit-rating {excellent,poor}
+@attribute buyspc {yes,no}
+
+@data
+<30,high,yes,50,excellent,yes
+30-40,low,yes,70,poor,no
+>40,medium,no,20,poor,yes
+30-40,high,yes,90,poor,yes
+30-40,low,yes,70,poor,no
+>40,high,no,?,poor,yes
